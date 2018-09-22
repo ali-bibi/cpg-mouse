@@ -8,5 +8,6 @@
 	</ns1:brainModel>
 	<ns1:bodyModel assetPath="robots/mouse_v2_model" customAsset="false">model.sdf</ns1:bodyModel>
 	<ns1:transferFunction src="all_neurons_spike_monitor.py" xsi:type="ns1:PythonTransferFunction"/>
+	<ns1:transferFunction src="actors_to_robot.py" xsi:type="ns1:PythonTransferFunction"/>
 	<ns1:transferFunction src="dc_source_to_sensors.py" xsi:type="ns1:PythonTransferFunction"/>
 </ns1:bibi>

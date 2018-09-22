@@ -46,48 +46,48 @@ def create_brain():
     # Connect neurons
     CON = sim.OneToOneConnector()
 
-    sim.Projection(presynaptic_population=population[0:],
-                   postsynaptic_population=population[4:],
+    sim.Projection(presynaptic_population=population[0:1],
+                   postsynaptic_population=population[4:5],
                    connector=CON,
                    synapse_type=SYN)
-    sim.Projection(presynaptic_population=population[1:],
-                   postsynaptic_population=population[5:],
-                   connector=CON,
-                   synapse_type=SYN)
-
-    sim.Projection(presynaptic_population=population[4:],
-                   postsynaptic_population=population[6:],
-                   connector=CON,
-                   synapse_type=SYN)
-    sim.Projection(presynaptic_population=population[5:],
-                   postsynaptic_population=population[7:],
+    sim.Projection(presynaptic_population=population[1:2],
+                   postsynaptic_population=population[5:6],
                    connector=CON,
                    synapse_type=SYN)
 
-    sim.Projection(presynaptic_population=population[7:],
-                   postsynaptic_population=population[5:],
+    sim.Projection(presynaptic_population=population[4:5],
+                   postsynaptic_population=population[6:7],
+                   connector=CON,
+                   synapse_type=SYN)
+    sim.Projection(presynaptic_population=population[5:6],
+                   postsynaptic_population=population[7:8],
+                   connector=CON,
+                   synapse_type=SYN)
+
+    sim.Projection(presynaptic_population=population[7:8],
+                   postsynaptic_population=population[5:6],
                    connector=CON,
                    synapse_type=SYNIS)
-    sim.Projection(presynaptic_population=population[6:],
-                   postsynaptic_population=population[4:],
+    sim.Projection(presynaptic_population=population[6:7],
+                   postsynaptic_population=population[4:5],
                    connector=CON,
                    synapse_type=SYNIS)
     
-    sim.Projection(presynaptic_population=population[6:],
-                   postsynaptic_population=population[7:],
+    sim.Projection(presynaptic_population=population[4:5],
+                   postsynaptic_population=population[5:6],
                    connector=CON,
                    synapse_type=SYNI)
-    sim.Projection(presynaptic_population=population[7:],
-                   postsynaptic_population=population[6:],
+    sim.Projection(presynaptic_population=population[5:6],
+                   postsynaptic_population=population[6:5],
                    connector=CON,
                    synapse_type=SYNI)
 
-    sim.Projection(presynaptic_population=population[4:],
-                   postsynaptic_population=population[2:],
+    sim.Projection(presynaptic_population=population[4:5],
+                   postsynaptic_population=population[2:3],
                    connector=CON,
                    synapse_type=SYNM)
-    sim.Projection(presynaptic_population=population[5:],
-                   postsynaptic_population=population[3:],
+    sim.Projection(presynaptic_population=population[5:6],
+                   postsynaptic_population=population[3:4],
                    connector=CON,
                    synapse_type=SYNM)
 
