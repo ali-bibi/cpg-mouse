@@ -1,0 +1,15 @@
+# Imported Python Transfer Function
+@nrp.MapSpikeSink("actor_1", nrp.brain.actors[0], nrp.leaky_integrator_alpha)
+@nrp.MapSpikeSink("actor_2", nrp.brain.actors[1], nrp.leaky_integrator_alpha)
+@nrp.MapSpikeSink("actor_3", nrp.brain.actors[2], nrp.leaky_integrator_alpha)
+@nrp.MapSpikeSink("actor_4", nrp.brain.actors[3], nrp.leaky_integrator_alpha)
+@nrp.MapRobotPublisher("fr_topic", Topic("/robot/forearm_R_joint/cmd_pos", std_msgs.msg.Float64))
+@nrp.MapRobotPublisher("fl_topic", Topic("/robot/forearm_L_joint/cmd_pos", std_msgs.msg.Float64))
+@nrp.MapRobotPublisher("ur_topic", Topic("/robot/upper_arm_R_joint/cmd_pos", std_msgs.msg.Float64))
+@nrp.MapRobotPublisher("ul_topic", Topic("/robot/upper_arm_L_joint/cmd_pos", std_msgs.msg.Float64))
+@nrp.Neuron2Robot()
+def actors_to_robot (t, actor_1, actor_2, actor_3, actor_4, fr_topic, fl_topic, ur_topic, ul_topic):
+    ur_topic.send_message(int(actor_2.voltage * 1.2e3))
+    fr_topic.send_message(int(actor_4.voltage * 1.2e3))
+    ul_topic.send_message(int(actor_3.voltage * 1.2e3))
+    fl_topic.send_message(int(actor_1.voltage * 1.2e3))

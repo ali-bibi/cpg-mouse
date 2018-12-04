@@ -1,0 +1,14 @@
+<bibi 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns="http://schemas.humanbrainproject.eu/SP10/2014/BIBI" xsi:schemaLocation="http://schemas.humanbrainproject.eu/SP10/2014/BIBI ../bibi_configuration.xsd">
+  <brainModel>
+    <file>idle_brain.py</file>
+    <populations population="record" from="0" step="1" to="600" xsi:type="Range" />
+    <populations population="sensors" from="0" step="1" to="5" xsi:type="Range" />
+    <populations population="actors" from="6" step="1" to="9" xsi:type="Range" />
+  </brainModel>
+  <bodyModel customAsset="false" assetPath="robots/mouse_v2_model" robotId="robot">mouse_v2_model/model.sdf</bodyModel>
+  <transferFunction src="all_neurons_spike_monitor.py" xsi:type="PythonTransferFunction" />
+  <transferFunction src="actors_to_robot.py" xsi:type="PythonTransferFunction" />
+  <transferFunction src="dc_source_to_sensors.py" xsi:type="PythonTransferFunction" />
+</bibi>
