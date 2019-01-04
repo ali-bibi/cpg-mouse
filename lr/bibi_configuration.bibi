@@ -3,13 +3,13 @@
   xmlns="http://schemas.humanbrainproject.eu/SP10/2014/BIBI" xsi:schemaLocation="http://schemas.humanbrainproject.eu/SP10/2014/BIBI ../bibi_configuration.xsd">
   <brainModel>
     <file>braitenberg.py</file>
-    <populations population="record" from="0" step="1" to="120" xsi:type="Range" />
+    <populations population="record" from="0" step="1" to="200" xsi:type="Range" />
     <populations population="sensors" from="0" step="1" to="4" xsi:type="Range" />
     <populations population="actors" from="5" step="1" to="9" xsi:type="Range" />
   </brainModel>
   <bodyModel customAsset="false" assetPath="robots/mouse_v2_model" robotId="robot">mouse_v2_model/model.sdf</bodyModel>
-  <transferFunction src="all_neurons_spike_monitor.py" xsi:type="PythonTransferFunction" />
   <transferFunction src="actors_to_robot.py" xsi:type="PythonTransferFunction" />
+  <transferFunction src="all_neurons_spike_monitor.py" xsi:type="PythonTransferFunction" />
   <transferFunction src="motors_to_spike_recorder.py" xsi:type="PythonTransferFunction" />
   <transferFunction src="dc_source_to_sensors.py" xsi:type="PythonTransferFunction" />
   <transferFunction src="monitor_actors.py" xsi:type="PythonTransferFunction" />
