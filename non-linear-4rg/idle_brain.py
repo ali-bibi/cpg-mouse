@@ -17,8 +17,8 @@ logger = logging.getLogger(__name__)
 
 
 def create_brain():
-    wI = 0.9
-    w = 0.9
+    wI = 0.6
+    w = 0.6
     
     multW2I = 0.07
     multWI = 0.01
@@ -75,7 +75,7 @@ def create_brain():
                         tau_syn_I=30) # 30
     population[10:30].set(cm=5e0,v_thresh=-55.0, # 5
                         tau_syn_E=30.0, # 50
-                        tau_syn_I=100.0) # 30
+                        tau_syn_I=50.0) # 30
     
     population[30:50].set(cm=2e0,v_thresh=-55.0, # 5
                           tau_refrac=10.0,
@@ -259,12 +259,12 @@ def create_brain():
         sim.Projection(presynaptic_population=population[x-1:x],
                        postsynaptic_population=population[x*10:(x*10+popSize)],
                        connector=ACON,
-                       synapse_type=sim.StaticSynapse(weight=4.7,delay=0.1))
+                       synapse_type=sim.StaticSynapse(weight=1.7,delay=0.1))
     for x in range(3,5):
         sim.Projection(presynaptic_population=population[x-1:x],
                        postsynaptic_population=population[300+x*10:(300+x*10+popSize)],
                        connector=ACON,
-                       synapse_type=sim.StaticSynapse(weight=4.7,delay=0.1))
+                       synapse_type=sim.StaticSynapse(weight=1.7,delay=0.1))
     
     # oscillators (self-inhibition)
     for x in range(1,3):
