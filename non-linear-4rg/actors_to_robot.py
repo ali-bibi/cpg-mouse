@@ -17,14 +17,13 @@
 @nrp.MapRobotPublisher("HLd_topic", Topic("/robot/shin_lower_L_joint/cmd_pos", std_msgs.msg.Float64))
 @nrp.Neuron2Robot()
 
-def actors_to_robot(t, actor_1, actor_2, actor_3, actor_4, actor_5, actor_6, actor_7, actor_8, FRu_topic, FLu_topic, FRd_topic, FLd_topic, HRu_topic, HLu_topic, HRd_topic, HLd_topic, topic):
-                     FRu_topic, FLu_topic, FRd_topic, FLd_topic, HRu_topic, HLu_topic, HRd_topic, HLd_topic):
-    FRu_topic.send_message(int(actor_1.voltage * 1.2e3))
+def actors_to_robot(t, actor_1, actor_2, actor_3, actor_4, actor_5, actor_6, actor_7, actor_8, FRu_topic, FLu_topic, FRd_topic, FLd_topic, HRu_topic, HLu_topic, HRd_topic, HLd_topic):
+    HLd_topic.send_message(int(actor_5.voltage * 1.2e3))
+    FLd_topic.send_message(int(actor_6.voltage * 1.2e3))
+    FRd_topic.send_message(int(actor_7.voltage * 1.2e3))
+    HRd_topic.send_message(int(actor_8.voltage * 1.2e3))
+    HLu_topic.send_message(int(actor_1.voltage * 1.2e3))
     FLu_topic.send_message(int(actor_2.voltage * 1.2e3))
-    FRd_topic.send_message(int(actor_3.voltage * 1.2e3))
-    FLd_topic.send_message(int(actor_4.voltage * 1.2e3))
-    HRu_topic.send_message(int(actor_5.voltage * 1.2e3))
-    HLu_topic.send_message(int(actor_6.voltage * 1.2e3))
-    HRd_topic.send_message(int(actor_7.voltage * 1.2e3))
-    HLd_topic.send_message(int(actor_8.voltage * 1.2e3))
+    FRu_topic.send_message(int(actor_3.voltage * 1.2e3))
+    HRu_topic.send_message(int(actor_4.voltage * 1.2e3))
     
